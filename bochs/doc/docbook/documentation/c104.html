@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Reading and Writing</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Bochs Documentation Manual"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Conventions"
+HREF="c74.html"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Bochs Documentation Manual</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c74.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="reading-writing"
+></A
+>Chapter 4. Reading and Writing</H1
+>
+
+<P
+>The DocBook source code -- user.dbk, for example -- is a plain text file that
+can be directly edited and saved with any text editor such as emacs or vi.</P
+>
+
+<DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>If you just want to read the documentation, you should not
+need to read and understand this section, and render the docs yourself.  The
+<A
+HREF="http://bochs.sourceforge.net"
+TARGET="_top"
+>Bochs web site</A
+> has all this information in readable form already.</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+
+<P
+>To render DocBook source code into the nice readable form the end-user will
+require, several tools are needed.  These tools allow the .dbk file to be
+rendered into such formats as HTML, PDF, and PostScript.  This section
+describes the tools you need and the steps you take to render the Bochs
+documentation.</P
+>
+
+<DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The rendering process is one-way.  That is, the DocBook source files will be
+downloaded from SVN, edited, and uploaded to SVN as .dbk files.  Along the
+way, it will probably be necessary to render them into HTML, but only to
+check one's work or to post them as part of a web page.  (I hope I'm not the
+only person to spend nine minutes trying to figure out how to 'compile' HTML
+into DocBook format.)</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+
+<DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN113"
+>4.1. Jade and DSSSL</A
+></H1
+>
+<P
+>Here is what the Linux Documentation Project says about jade:
+
+  <A
+NAME="AEN116"
+></A
+><TABLE
+BORDER="0"
+WIDTH="100%"
+CELLSPACING="0"
+CELLPADDING="0"
+CLASS="BLOCKQUOTE"
+><TR
+><TD
+WIDTH="10%"
+VALIGN="TOP"
+>&nbsp;</TD
+><TD
+VALIGN="TOP"
+>  
+  <P
+>  Jade is the front-end processor for SGML and XML. It uses the DSSSL and
+  DocBook DTD to perform the verification and rendering from SGML and XML into
+  the target format.
+  </P
+>
+  </TD
+><TD
+WIDTH="10%"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+COLSPAN="2"
+ALIGN="RIGHT"
+VALIGN="TOP"
+>--<SPAN
+CLASS="ATTRIBUTION"
+>  LDP author's guide
+  </SPAN
+></TD
+><TD
+WIDTH="10%"
+>&nbsp;</TD
+></TR
+></TABLE
+></P
+>
+
+<P
+>What does all this mean?
+For purposes of Bochs documentation, jade reads the docbook source file and
+writes out a HTML/PDF/PS file.  Bochs documentation is in SGML format, though
+apparantly jade can handle XML Docbooks as well.  DSSSL stands for
+<SPAN
+CLASS="QUOTE"
+>"Document Style Semantics and Specification Language"</SPAN
+>, and it
+tells jade how to translate the docbook tags into the target format.  DSSSL
+files are written in the Scheme programming language, which is a variant of
+LISP.  Learn more about DSSSL at <A
+HREF="http://www.jclark.com/dsssl"
+TARGET="_top"
+>Jim Clark's DSSSL page</A
+>.
+The DocBook DTD is the formal description of what elements and attributes can
+be used in a docbook.</P
+>
+
+<DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN122"
+>4.1.1. </A
+></H2
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c74.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Conventions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
